@@ -1,0 +1,131 @@
+///
+//  Generated code. Do not modify.
+//  source: bchrpc.proto
+//
+// @dart = 2.3
+// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+
+// ignore_for_file: UNDEFINED_SHOWN_NAME,UNUSED_SHOWN_NAME
+import 'dart:core' as $core;
+import 'package:protobuf/protobuf.dart' as $pb;
+
+class SlpAction extends $pb.ProtobufEnum {
+  static const SlpAction NON_SLP = SlpAction._(0, 'NON_SLP');
+  static const SlpAction NON_SLP_BURN = SlpAction._(1, 'NON_SLP_BURN');
+  static const SlpAction SLP_PARSE_ERROR = SlpAction._(2, 'SLP_PARSE_ERROR');
+  static const SlpAction SLP_UNSUPPORTED_VERSION = SlpAction._(3, 'SLP_UNSUPPORTED_VERSION');
+  static const SlpAction SLP_V1_GENESIS = SlpAction._(4, 'SLP_V1_GENESIS');
+  static const SlpAction SLP_V1_MINT = SlpAction._(5, 'SLP_V1_MINT');
+  static const SlpAction SLP_V1_SEND = SlpAction._(6, 'SLP_V1_SEND');
+  static const SlpAction SLP_NFT1_GROUP_GENESIS = SlpAction._(7, 'SLP_NFT1_GROUP_GENESIS');
+  static const SlpAction SLP_NFT1_GROUP_MINT = SlpAction._(8, 'SLP_NFT1_GROUP_MINT');
+  static const SlpAction SLP_NFT1_GROUP_SEND = SlpAction._(9, 'SLP_NFT1_GROUP_SEND');
+  static const SlpAction SLP_NFT1_UNIQUE_CHILD_GENESIS = SlpAction._(10, 'SLP_NFT1_UNIQUE_CHILD_GENESIS');
+  static const SlpAction SLP_NFT1_UNIQUE_CHILD_SEND = SlpAction._(11, 'SLP_NFT1_UNIQUE_CHILD_SEND');
+
+  static const $core.List<SlpAction> values = <SlpAction> [
+    NON_SLP,
+    NON_SLP_BURN,
+    SLP_PARSE_ERROR,
+    SLP_UNSUPPORTED_VERSION,
+    SLP_V1_GENESIS,
+    SLP_V1_MINT,
+    SLP_V1_SEND,
+    SLP_NFT1_GROUP_GENESIS,
+    SLP_NFT1_GROUP_MINT,
+    SLP_NFT1_GROUP_SEND,
+    SLP_NFT1_UNIQUE_CHILD_GENESIS,
+    SLP_NFT1_UNIQUE_CHILD_SEND,
+  ];
+
+  static final $core.Map<$core.int, SlpAction> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SlpAction valueOf($core.int value) => _byValue[value];
+
+  const SlpAction._($core.int v, $core.String n) : super(v, n);
+}
+
+class GetBlockchainInfoResponse_BitcoinNet extends $pb.ProtobufEnum {
+  static const GetBlockchainInfoResponse_BitcoinNet MAINNET = GetBlockchainInfoResponse_BitcoinNet._(0, 'MAINNET');
+  static const GetBlockchainInfoResponse_BitcoinNet REGTEST = GetBlockchainInfoResponse_BitcoinNet._(1, 'REGTEST');
+  static const GetBlockchainInfoResponse_BitcoinNet TESTNET3 = GetBlockchainInfoResponse_BitcoinNet._(2, 'TESTNET3');
+  static const GetBlockchainInfoResponse_BitcoinNet SIMNET = GetBlockchainInfoResponse_BitcoinNet._(3, 'SIMNET');
+
+  static const $core.List<GetBlockchainInfoResponse_BitcoinNet> values = <GetBlockchainInfoResponse_BitcoinNet> [
+    MAINNET,
+    REGTEST,
+    TESTNET3,
+    SIMNET,
+  ];
+
+  static final $core.Map<$core.int, GetBlockchainInfoResponse_BitcoinNet> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static GetBlockchainInfoResponse_BitcoinNet valueOf($core.int value) => _byValue[value];
+
+  const GetBlockchainInfoResponse_BitcoinNet._($core.int v, $core.String n) : super(v, n);
+}
+
+class BlockNotification_Type extends $pb.ProtobufEnum {
+  static const BlockNotification_Type CONNECTED = BlockNotification_Type._(0, 'CONNECTED');
+  static const BlockNotification_Type DISCONNECTED = BlockNotification_Type._(1, 'DISCONNECTED');
+
+  static const $core.List<BlockNotification_Type> values = <BlockNotification_Type> [
+    CONNECTED,
+    DISCONNECTED,
+  ];
+
+  static final $core.Map<$core.int, BlockNotification_Type> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static BlockNotification_Type valueOf($core.int value) => _byValue[value];
+
+  const BlockNotification_Type._($core.int v, $core.String n) : super(v, n);
+}
+
+class TransactionNotification_Type extends $pb.ProtobufEnum {
+  static const TransactionNotification_Type UNCONFIRMED = TransactionNotification_Type._(0, 'UNCONFIRMED');
+  static const TransactionNotification_Type CONFIRMED = TransactionNotification_Type._(1, 'CONFIRMED');
+
+  static const $core.List<TransactionNotification_Type> values = <TransactionNotification_Type> [
+    UNCONFIRMED,
+    CONFIRMED,
+  ];
+
+  static final $core.Map<$core.int, TransactionNotification_Type> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static TransactionNotification_Type valueOf($core.int value) => _byValue[value];
+
+  const TransactionNotification_Type._($core.int v, $core.String n) : super(v, n);
+}
+
+class SlpTransactionInfo_ValidityJudgement extends $pb.ProtobufEnum {
+  static const SlpTransactionInfo_ValidityJudgement UNKNOWN_OR_INVALID = SlpTransactionInfo_ValidityJudgement._(0, 'UNKNOWN_OR_INVALID');
+  static const SlpTransactionInfo_ValidityJudgement VALID = SlpTransactionInfo_ValidityJudgement._(1, 'VALID');
+
+  static const $core.List<SlpTransactionInfo_ValidityJudgement> values = <SlpTransactionInfo_ValidityJudgement> [
+    UNKNOWN_OR_INVALID,
+    VALID,
+  ];
+
+  static final $core.Map<$core.int, SlpTransactionInfo_ValidityJudgement> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SlpTransactionInfo_ValidityJudgement valueOf($core.int value) => _byValue[value];
+
+  const SlpTransactionInfo_ValidityJudgement._($core.int v, $core.String n) : super(v, n);
+}
+
+class SlpTransactionInfo_BurnFlags extends $pb.ProtobufEnum {
+  static const SlpTransactionInfo_BurnFlags BURNED_INPUTS_OUTPUTS_TOO_HIGH = SlpTransactionInfo_BurnFlags._(0, 'BURNED_INPUTS_OUTPUTS_TOO_HIGH');
+  static const SlpTransactionInfo_BurnFlags BURNED_INPUTS_BAD_OPRETURN = SlpTransactionInfo_BurnFlags._(1, 'BURNED_INPUTS_BAD_OPRETURN');
+  static const SlpTransactionInfo_BurnFlags BURNED_INPUTS_OTHER_TOKEN = SlpTransactionInfo_BurnFlags._(2, 'BURNED_INPUTS_OTHER_TOKEN');
+  static const SlpTransactionInfo_BurnFlags BURNED_OUTPUTS_MISSING_BCH_VOUT = SlpTransactionInfo_BurnFlags._(3, 'BURNED_OUTPUTS_MISSING_BCH_VOUT');
+  static const SlpTransactionInfo_BurnFlags BURNED_INPUTS_GREATER_THAN_OUTPUTS = SlpTransactionInfo_BurnFlags._(4, 'BURNED_INPUTS_GREATER_THAN_OUTPUTS');
+
+  static const $core.List<SlpTransactionInfo_BurnFlags> values = <SlpTransactionInfo_BurnFlags> [
+    BURNED_INPUTS_OUTPUTS_TOO_HIGH,
+    BURNED_INPUTS_BAD_OPRETURN,
+    BURNED_INPUTS_OTHER_TOKEN,
+    BURNED_OUTPUTS_MISSING_BCH_VOUT,
+    BURNED_INPUTS_GREATER_THAN_OUTPUTS,
+  ];
+
+  static final $core.Map<$core.int, SlpTransactionInfo_BurnFlags> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SlpTransactionInfo_BurnFlags valueOf($core.int value) => _byValue[value];
+
+  const SlpTransactionInfo_BurnFlags._($core.int v, $core.String n) : super(v, n);
+}
+
