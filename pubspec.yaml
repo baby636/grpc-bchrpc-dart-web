@@ -1,5 +1,5 @@
 name: grpc_bchrpc_web
-version: 0.0.1
+version: 0.0.2
 description: Connect to a BCHD full node with a simplified grpc-web client wrapper.
 homepage: https://github.com/simpleledgerinc/grpc-bchrpc-dart-web
 environment:
