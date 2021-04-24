@@ -1,3 +1,7 @@
+## 0.1.0
+    * Null safety opt-in
+    * Fixed unit tests, removed experimental warning in README
+
 ## 0.0.2
     * Updated bchrpc.proto to latest version (includes some breaking changes)
     * Note: keeping with the 0.0.x version as this still marked as experimental

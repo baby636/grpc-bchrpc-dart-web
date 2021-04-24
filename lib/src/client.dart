@@ -3,15 +3,15 @@ import "package:grpc/grpc_web.dart";
 import '../grpc_bchrpc_web.dart';
 
 class GrpcWebClient {
-  GrpcWebClientChannel _channel;
-  bchrpcClient _stub;
+  late GrpcWebClientChannel _channel;
+  late bchrpcClient _stub;
 
-  GrpcWebClient({String host = "", bool testnet = false}) {
-    if (host.isEmpty) {
+  GrpcWebClient({String? host, bool testnet = false}) {
+    if (host == null) {
       if (testnet) {
-        host = "https://bchd-testnet.greyh.at";
+        host = "https://bchd-testnet.greyh.at:18335";
       } else {
-        host = "https://bchd.ny1.simpleledger.io";
+        host = "https://bchd.greyh.at:8335";
       }
     }
     _channel = GrpcWebClientChannel.xhr(Uri.parse(host));
@@ -64,7 +64,7 @@ class GrpcWebClient {
       {int nbSkip = -1,
       int nbFetch = -1,
       int height = -1,
-      List<int> hash,
+      List<int>? hash,
       bool reversedHashOrder = false}) {
     final req = GetAddressTransactionsRequest();
     if (nbSkip > -1) {
@@ -123,7 +123,7 @@ class GrpcWebClient {
   }
 
   Future<GetRawBlockResponse> getRawBlock(
-      {List<int> hash, int height = -1, bool reversedHashOrder = false}) {
+      {List<int>? hash, int height = -1, bool reversedHashOrder = false}) {
     final req = GetRawBlockRequest();
     if (height > -1) {
       req.height = height;
@@ -141,7 +141,7 @@ class GrpcWebClient {
   }
 
   Future<GetBlockResponse> getBlock(
-      {List<int> hash, int height = -1, bool reversedHashOrder = false}) {
+      {List<int>? hash, int height = -1, bool reversedHashOrder = false}) {
     final req = GetBlockRequest();
     if (height > -1) {
       req.height = height;
@@ -159,7 +159,7 @@ class GrpcWebClient {
   }
 
   Future<GetBlockInfoResponse> getBlockInfo({
-    List<int> hash,
+    List<int>? hash,
     int height = -1,
     bool reversedHashOrder = false,
   }) {
@@ -189,7 +189,7 @@ class GrpcWebClient {
   }
 
   Future<SubmitTransactionResponse> submitTansaction(List<int> txn,
-      {List<SlpRequiredBurn> requiredSlpBurns, bool skipSlpValidityChecks}) {
+      {List<SlpRequiredBurn>? requiredSlpBurns, bool? skipSlpValidityChecks}) {
     final req = SubmitTransactionRequest();
     req.transaction = txn;
 
@@ -210,9 +210,9 @@ class GrpcWebClient {
       bool includeBlockAcceptance = false,
       bool includeSerializedTxn = false,
       bool includeOnlySlp = false,
-      List<List<int>> slpTokenIds,
-      List<String> addresses,
-      List<Transaction_Input_Outpoint> outpoints}) {
+      List<List<int>>? slpTokenIds,
+      List<String>? addresses,
+      List<Transaction_Input_Outpoint>? outpoints}) {
     final req = SubscribeTransactionsRequest();
     includeMempoolAcceptance
         ? req.includeMempool = true
@@ -254,7 +254,7 @@ class GrpcWebClient {
   }
 
   Future<CheckSlpTransactionResponse> checkSlpTransaction(List<int> txn,
-      {List<SlpRequiredBurn> requiredSlpBurns}) {
+      {List<SlpRequiredBurn>? requiredSlpBurns}) {
     final req = CheckSlpTransactionRequest();
     if (requiredSlpBurns != null) {
       for (var burn in requiredSlpBurns) {
@@ -276,7 +276,7 @@ class GrpcWebClient {
 
   Future<GetSlpTrustedValidationResponse> getTrustedSlpValidation(
       List<GetSlpTrustedValidationRequest_Query> txos,
-      {bool reversedHashOrder}) {
+      {bool? reversedHashOrder}) {
     final req = GetSlpTrustedValidationRequest();
     if (reversedHashOrder != null) {
       for (var txo in txos) {

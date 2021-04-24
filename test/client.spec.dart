@@ -64,10 +64,10 @@ void main() {
     var errorMsg = "";
     try {
       await client.submitTansaction(hex.decode(txnHex));
-    } catch (e) {
-      errorMsg = e.message;
+    } catch (err) {
+      errorMsg = "$err";
     }
-    expect(errorMsg, "tx rejected: transaction already exists");
+    expect(errorMsg.contains("tx rejected: transaction already exists"), true);
     client.close();
   });
 
@@ -85,17 +85,9 @@ void main() {
     var txnRes = await client.getRawTransaction(hex.decode(txid),
         reversedHashOrder: true);
     var txnBuf = txnRes.transaction;
-    var doesPrevent = false;
-    try {
-      await client.checkSlpTransaction(txnBuf);
-    } catch (err) {
-      expect(err.message,
-          "submitted transaction rejected to prevent token burn: inputs greater than outputs, use SlpRequiredBurn to allow burns");
-      doesPrevent = true;
-    }
-    if (!doesPrevent) {
-      throw Error();
-    }
+    var res = await client.checkSlpTransaction(txnBuf);
+    expect(res.isValid, false);
+    expect(res.invalidReason, "inputs are greater than outputs");
   });
 
   test("allows BURNED_INPUTS_GREATER_THAN_OUTPUTS", () async {

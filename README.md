@@ -1,7 +1,5 @@
 # BCHD gRPC web client for Flutter web projects
 
-NOTE: This is an experimental package for web projects. The unit tests currently do not work in this package due to the missing dart:html dependency.  For unit tests, see the `grpc_bchrpc` package until the tests are functioning.
-
 This package provides a gRPC web client for connecting directly to a [BCHD](https://bchd.cash) full node.
 
 # Usage
